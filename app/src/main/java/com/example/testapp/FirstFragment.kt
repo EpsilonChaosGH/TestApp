@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.testapp.databinding.FragmentFirstBinding
 
@@ -30,28 +29,57 @@ class FirstFragment : Fragment() {
 
     private fun increment() {
         counter.counter += 1
-        counter.o1 = check(counter.o1)
+        counter.decimal1 = checkDecimal(counter.decimal1)
 
-        if (counter.o1 == 0) {
-            counter.o2 = check(counter.o2)
+        if (counter.decimal1 == 0) {
+            counter.decimal2 = checkDecimal(counter.decimal2)
 
-            if (counter.o2 == 0) {
-                counter.o3 = check(counter.o3)
+            if (counter.decimal2 == 0) {
+                counter.decimal3 = checkDecimal(counter.decimal3)
 
-                if (counter.o3 == 0) {
-                    counter.o4 = check(counter.o4)
+                if (counter.decimal3 == 0) {
+                    counter.decimal4 = checkDecimal(counter.decimal4)
 
-                    if (counter.o4 == 0) {
-                        counter.o5 = check(counter.o5)
+                    if (counter.decimal4 == 0) {
+                        counter.decimal5 = checkDecimal(counter.decimal5)
 
-                        if (counter.o5 == 0) {
-                            counter.o6 = check(counter.o6)
+                        if (counter.decimal5 == 0) {
+                            counter.decimal6 = checkDecimal(counter.decimal6)
 
-                            if (counter.o6 == 0) {
-                                counter.o7 = check(counter.o7)
+                            if (counter.decimal6 == 0) {
+                                counter.decimal7 = checkDecimal(counter.decimal7)
 
-                                if (counter.o7 == 0) {
-                                    counter.o8 = check(counter.o8)
+                                if (counter.decimal7 == 0) {
+                                    counter.decimal8 = checkDecimal(counter.decimal8)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        counter.binary1 = checkBinary(counter.binary1)
+        if (counter.binary1 == 0) {
+            counter.binary2 = checkBinary(counter.binary2)
+
+            if (counter.binary2 == 0) {
+                counter.binary3 = checkBinary(counter.binary3)
+
+                if (counter.binary3 == 0) {
+                    counter.binary4 = checkBinary(counter.binary4)
+
+                    if (counter.binary4 == 0) {
+                        counter.binary5 = checkBinary(counter.binary5)
+
+                        if (counter.binary5 == 0) {
+                            counter.binary6 = checkBinary(counter.binary6)
+
+                            if (counter.binary6 == 0) {
+                                counter.binary7 = checkBinary(counter.binary7)
+
+                                if (counter.binary7 == 0) {
+                                    counter.binary8 = checkBinary(counter.binary8)
                                 }
                             }
                         }
@@ -61,7 +89,14 @@ class FirstFragment : Fragment() {
         }
     }
 
-    private fun check(i: Int): Int {
+    private fun checkDecimal(i: Int): Int {
+        return if (i == 9) 0
+        else {
+            i + 1
+        }
+    }
+
+    private fun checkBinary(i: Int): Int {
         return if (i == 1) 0
         else {
             i + 1
@@ -71,26 +106,46 @@ class FirstFragment : Fragment() {
     private fun renderState() {
         with(binding) {
             counterTextView.text = counter.counter.toString()
-            textView1.text = counter.o1.toString()
-            textView2.text = counter.o2.toString()
-            textView3.text = counter.o3.toString()
-            textView4.text = counter.o4.toString()
-            textView5.text = counter.o5.toString()
-            textView6.text = counter.o6.toString()
-            textView7.text = counter.o7.toString()
-            textView8.text = counter.o8.toString()
+
+            textView1.text = counter.binary1.toString()
+            textView2.text = counter.binary2.toString()
+            textView3.text = counter.binary3.toString()
+            textView4.text = counter.binary4.toString()
+            textView5.text = counter.binary5.toString()
+            textView6.text = counter.binary6.toString()
+            textView7.text = counter.binary7.toString()
+            textView8.text = counter.binary8.toString()
+
+            textViewDNS1.text = counter.decimal1.toString()
+            textViewDNS2.text = counter.decimal2.toString()
+            textViewDNS3.text = counter.decimal3.toString()
+            textViewDNS4.text = counter.decimal4.toString()
+            textViewDNS5.text = counter.decimal5.toString()
+            textViewDNS6.text = counter.decimal6.toString()
+            textViewDNS7.text = counter.decimal7.toString()
+            textViewDNS8.text = counter.decimal8.toString()
         }
     }
 
     data class Counter(
         var counter: Int = 0,
-        var o1: Int = 0,
-        var o2: Int = 0,
-        var o3: Int = 0,
-        var o4: Int = 0,
-        var o5: Int = 0,
-        var o6: Int = 0,
-        var o7: Int = 0,
-        var o8: Int = 0,
+
+        var decimal1: Int = 0,
+        var decimal2: Int = 0,
+        var decimal3: Int = 0,
+        var decimal4: Int = 0,
+        var decimal5: Int = 0,
+        var decimal6: Int = 0,
+        var decimal7: Int = 0,
+        var decimal8: Int = 0,
+
+        var binary1: Int = 0,
+        var binary2: Int = 0,
+        var binary3: Int = 0,
+        var binary4: Int = 0,
+        var binary5: Int = 0,
+        var binary6: Int = 0,
+        var binary7: Int = 0,
+        var binary8: Int = 0,
     )
 }
