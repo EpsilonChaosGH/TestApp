@@ -18,7 +18,7 @@
         style="@style/textViewCounterStyle"
         android:layout_marginTop="30dp"
         android:text="Binary Numeral System"
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/counterTextView" />
@@ -76,7 +76,7 @@
         style="@style/textViewCounterStyle"
         android:layout_marginTop="30dp"
         android:text="Decimal Numeral System"
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/binaryNumberSystemLinearLayout" />
@@ -129,6 +129,63 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <TextView
+        android:id="@+id/hexadecimalNumeralSystemTextView"
+        style="@style/textViewCounterStyle"
+        android:layout_marginTop="30dp"
+        android:text="Hexadecimal Numeral System"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decimalNumeralSystemLinearLayout" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/hexadecimalNumeralSystemLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hexadecimalNumeralSystemTextView">
+
+        <TextView
+            android:id="@+id/textViewHEX9"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX8"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX7"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX6"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX5"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX4"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX3"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX2"
+            style="@style/textViewCounterStyle" />
+
+        <TextView
+            android:id="@+id/textViewHEX1"
+            style="@style/textViewCounterStyle" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <Button
         android:id="@+id/incrementButton"
         android:layout_width="wrap_content"

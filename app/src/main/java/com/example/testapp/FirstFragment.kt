@@ -11,6 +11,8 @@ class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private lateinit var counter: Counter
+    private var hexadecimalArray =
+        arrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F')
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,14 +23,16 @@ class FirstFragment : Fragment() {
 
         counter = Counter()
         binding.incrementButton.setOnClickListener {
-            increment()
+            counter.counter += 1
+            incrementDecimal()
+            incrementBinary()
+            incrementHexadecimal()
             renderState()
         }
         return binding.root
     }
 
-    private fun increment() {
-        counter.counter += 1
+    private fun incrementDecimal() {
         counter.decimal1 = checkDecimal(counter.decimal1)
 
         if (counter.decimal1 == 0) {
@@ -58,8 +62,11 @@ class FirstFragment : Fragment() {
                 }
             }
         }
+    }
 
+    private fun incrementBinary() {
         counter.binary1 = checkBinary(counter.binary1)
+
         if (counter.binary1 == 0) {
             counter.binary2 = checkBinary(counter.binary2)
 
@@ -89,6 +96,38 @@ class FirstFragment : Fragment() {
         }
     }
 
+    private fun incrementHexadecimal() {
+        counter.hexadecimal1 = checkHexadecimal(counter.hexadecimal1)
+
+        if (counter.hexadecimal1 == '0') {
+            counter.hexadecimal2 = checkHexadecimal(counter.hexadecimal2)
+
+            if (counter.hexadecimal2 == '0') {
+                counter.hexadecimal3 = checkHexadecimal(counter.hexadecimal3)
+
+                if (counter.hexadecimal3 == '0') {
+                    counter.hexadecimal4 = checkHexadecimal(counter.hexadecimal4)
+
+                    if (counter.hexadecimal4 == '0') {
+                        counter.hexadecimal5 = checkHexadecimal(counter.hexadecimal5)
+
+                        if (counter.hexadecimal5 == '0') {
+                            counter.hexadecimal6 = checkHexadecimal(counter.hexadecimal6)
+
+                            if (counter.hexadecimal6 == '0') {
+                                counter.hexadecimal7 = checkHexadecimal(counter.hexadecimal7)
+
+                                if (counter.hexadecimal7 == '0') {
+                                    counter.hexadecimal8 = checkHexadecimal(counter.hexadecimal8)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private fun checkDecimal(i: Int): Int {
         return if (i == 9) 0
         else {
@@ -100,6 +139,14 @@ class FirstFragment : Fragment() {
         return if (i == 1) 0
         else {
             i + 1
+        }
+    }
+
+    private fun checkHexadecimal(i: Char): Char {
+        return if (i == 'F') '0'
+        else {
+            val index = hexadecimalArray.indexOfFirst { it == i }
+            hexadecimalArray[index + 1]
         }
     }
 
@@ -124,6 +171,15 @@ class FirstFragment : Fragment() {
             textViewDNS6.text = counter.decimal6.toString()
             textViewDNS7.text = counter.decimal7.toString()
             textViewDNS8.text = counter.decimal8.toString()
+
+            textViewHEX1.text = counter.hexadecimal1.toString()
+            textViewHEX2.text = counter.hexadecimal2.toString()
+            textViewHEX3.text = counter.hexadecimal3.toString()
+            textViewHEX4.text = counter.hexadecimal4.toString()
+            textViewHEX5.text = counter.hexadecimal5.toString()
+            textViewHEX6.text = counter.hexadecimal6.toString()
+            textViewHEX7.text = counter.hexadecimal7.toString()
+            textViewHEX8.text = counter.hexadecimal8.toString()
         }
     }
 
@@ -147,5 +203,15 @@ class FirstFragment : Fragment() {
         var binary6: Int = 0,
         var binary7: Int = 0,
         var binary8: Int = 0,
-    )
+
+        var hexadecimal1: Char = '0',
+        var hexadecimal2: Char = '0',
+        var hexadecimal3: Char = '0',
+        var hexadecimal4: Char = '0',
+        var hexadecimal5: Char = '0',
+        var hexadecimal6: Char = '0',
+        var hexadecimal7: Char = '0',
+        var hexadecimal8: Char = '0',
+
+        )
 }
